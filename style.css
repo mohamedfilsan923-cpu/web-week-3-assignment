@@ -1,0 +1,167 @@
+/* ==========================================
+   1. COLOR PALETTE & CSS VARIABLES
+   ========================================== */
+:root {
+    --primary-color: #4f46e5;       /* Professional Indigo */
+    --primary-hover: #4338ca;     /* Darker Indigo for Hover */
+    --bg-color: #f8fafc;          /* Soft light slate background */
+    --card-bg: #ffffff;           /* Crisp white for section cards */
+    --text-main: #1e293b;         /* Dark slate for main text */
+    --text-muted: #64748b;        /* Muted gray for descriptions/labels */
+    --border-color: #e2e8f0;      /* Subtle border color */
+    --table-alt-bg: #f8fafc;      /* Alternating row background */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* ==========================================
+   GLOBAL RESET & TYPOGRAPHY
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    padding: 2rem 1rem;
+}
+
+/* Main Container Layout */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   4. CSS BOX MODEL & DISTINCT VISUAL "CARDS"
+   ========================================== */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;           /* Soft modern rounded corners */
+    padding: 2rem;                 /* Internal container spacing */
+    margin-bottom: 1.5rem;         /* Section separation */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================
+   2. TYPOGRAPHY HIERARCHY
+   ========================================== */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--text-main);
+}
+
+.header-card h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.header-card p {
+    color: var(--text-muted);
+}
+
+.form-card h2, .table-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+/* ==========================================
+   3. FORM & BUTTON STYLING
+   ========================================== */
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+input, select {
+    width: 100%;
+    padding: 0.75rem 1rem;         /* Proper padding inside inputs */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;            /* Rounded corners */
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-main);
+    background-color: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+/* Cohesive Button Styling */
+button, .btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    width: 100%;
+}
+
+button:hover, .btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
+/* ==========================================
+   3. EXPENSE TABLE STYLING
+   ========================================== */
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    margin-top: 0.5rem;
+}
+
+th, td {
+    padding: 0.875rem 1rem;        /* Proper cell padding */
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--primary-color); /* Styled table header */
+    color: white;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Alternating Row Colors */
+tbody tr:nth-child(even) {
+    background-color: var(--table-alt-bg);
+}
+
+tbody tr:hover {
+    background-color: #f1f5f9;
+}
